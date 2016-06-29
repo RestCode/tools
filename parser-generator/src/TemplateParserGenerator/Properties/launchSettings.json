@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "ttgen": {
+      "commandName": "ttgen",
+      "commandLineArgs": "create"
+    },
+    "TemplateParserGenerator": {
+      "commandName": "Project",
+      "commandLineArgs": "create"
+    }
+  }
+}
