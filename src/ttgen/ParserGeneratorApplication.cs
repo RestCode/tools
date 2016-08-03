@@ -49,9 +49,7 @@ namespace TemplateParserGenerator
                         var content = File.ReadAllText(file);
                         var generator = new Generator(content, ns, className);
                         var result = generator.Generate();
-
-                        var fileInfo = new FileInfo(file);
-                        var fileName = file.Replace(fileInfo.Extension, ".generator.cs");
+                        var fileName = $"{className}.cs";
                         File.WriteAllText(fileName, result);
                     }
                     

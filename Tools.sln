@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TemplateParserGenerator", "src\TemplateParserGenerator\TemplateParserGenerator.xproj", "{BE45A70F-D5CB-46F3-8C29-A3A7A2984D59}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ttgen", "src\ttgen\ttgen.xproj", "{BE45A70F-D5CB-46F3-8C29-A3A7A2984D59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
