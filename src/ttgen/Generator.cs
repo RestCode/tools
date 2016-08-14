@@ -91,7 +91,7 @@ namespace TemplateParserGenerator
                 result += "\tusing " + usings[i] + ";\r\n";
             }
             result += "\r\n";
-            result += "    public partial class " + generatorClassName + " : GeneratorBase\r\n";
+            result += "    public partial class " + generatorClassName + "\r\n";
             result += "    {\r\n";
             for (var i = 0; i < declarations.Count; i++)
             {
@@ -104,7 +104,7 @@ namespace TemplateParserGenerator
             result += "        private void WriteLine(string text) {\r\n";
             result += "            __sb.AppendLine(text);\r\n";
             result += "        }\r\n\r\n";
-            result += "        protected override string TransformText()\r\n";
+            result += "        private string transformText()\r\n";
             result += "        {\r\n";
             result += "            __sb = new System.Text.StringBuilder();\r\n";
             result += transformCode + "\r\n";
