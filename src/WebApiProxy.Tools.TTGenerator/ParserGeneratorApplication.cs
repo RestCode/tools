@@ -27,7 +27,7 @@ namespace WebApiProxy.Tools.TTGenerator
                     var sources = sourceFileOption.Value();
                     if (!sourceFileOption.HasValue())
                     {
-                        Console.WriteLine($"No input file(s) specified. Using *.template in {AppContext.BaseDirectory}");
+                        Console.WriteLine($"No input file(s) specified. Using *.template in {Directory.GetCurrentDirectory()}");
                         sources = string.Join(" ", Directory.GetFiles(AppContext.BaseDirectory, "*.template"));
                     }
                     
