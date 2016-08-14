@@ -27,8 +27,9 @@ namespace WebApiProxy.Tools.TTGenerator
                     var sources = sourceFileOption.Value();
                     if (!sourceFileOption.HasValue())
                     {
-                        Console.WriteLine($"No input file(s) specified. Using *.template in {Directory.GetCurrentDirectory()}");
-                        sources = string.Join(" ", Directory.GetFiles(AppContext.BaseDirectory, "*.template"));
+                        var dir = Directory.GetCurrentDirectory();
+                        Console.WriteLine($"No input file(s) specified. Using *.template in {dir}");
+                        sources = string.Join(" ", Directory.GetFiles(dir, "*.template"));
                     }
                     
                     var className = classNameOption.Value();
@@ -46,11 +47,14 @@ namespace WebApiProxy.Tools.TTGenerator
                     
                     foreach (var file in inputFiles)
                     {
-                        var content = File.ReadAllText(file);
-                        var generator = new Generator(content, ns, className);
-                        var result = generator.Generate();
-                        var fileName = $"{className}.generated.cs";
-                        File.WriteAllText(fileName, result);
+                        if (!String.IsNullOrEmpty(file))
+                        {
+                            var content = File.ReadAllText(file);
+                            var generator = new Generator(content, ns, className);
+                            var result = generator.Generate();
+                            var fileName = $"{className}.generated.cs";
+                            File.WriteAllText(fileName, result);
+                        }
                     }
                     
 
