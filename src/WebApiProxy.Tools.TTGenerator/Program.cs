@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TemplateParserGenerator
+namespace WebApiProxy.Tools.TTGenerator
 {
     public class Program
     {

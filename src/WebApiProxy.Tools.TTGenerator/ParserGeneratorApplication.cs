@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace TemplateParserGenerator
+namespace WebApiProxy.Tools.TTGenerator
 {
     internal class ParserGeneratorApplication: CommandLineApplication
     {

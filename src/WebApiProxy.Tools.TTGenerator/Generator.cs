@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace TemplateParserGenerator
+namespace WebApiProxy.Tools.TTGenerator
 {
     internal class Generator
     {
