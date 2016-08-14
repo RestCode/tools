@@ -8,7 +8,8 @@
   "dependencies": {
     "Microsoft.Extensions.CommandLineUtils": "1.0.0",
     "Microsoft.NETCore.App": {
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "type": "platform"
     }
   },
   "frameworks": {
