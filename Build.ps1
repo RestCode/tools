@@ -56,8 +56,9 @@ exec { & dotnet restore }
 
 exec { & dotnet build .\src\WebApiProxy.Tools.TTGenerator\project.json -c Release }
 
-$revision = @{ $true = $env:APPVEYOR_BUILD_NUMBER; $false = 1 }[$env:APPVEYOR_BUILD_NUMBER -ne $NULL];
 
+$tag = @{ $true = $env:PRE_RELEASE_TAG; $false = 1 }[$env:PRE_RELEASE_TAG -ne $NULL];
+$revision = @{ $true = $env:APPVEYOR_BUILD_NUMBER; $false = 1 }[$env:APPVEYOR_BUILD_NUMBER -ne $NULL] + $tag;
 
 #exec { & dotnet test .\test\WebApiProxy.Tools.TTGenerator.Tests -c Release }
 
