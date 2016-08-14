@@ -58,7 +58,7 @@ exec { & dotnet build .\src\WebApiProxy.Tools.TTGenerator\project.json -c Releas
 
 
 $tag = @{ $true = $env:PRE_RELEASE_TAG; $false = 1 }[$env:PRE_RELEASE_TAG -ne $NULL];
-$revision = @{ $true = $env:APPVEYOR_BUILD_NUMBER; $false = 1 }[$env:APPVEYOR_BUILD_NUMBER -ne $NULL] + $tag;
+$revision =  $tag + @{ $true = $env:APPVEYOR_BUILD_NUMBER; $false = 1 }[$env:APPVEYOR_BUILD_NUMBER -ne $NULL];
 
 #exec { & dotnet test .\test\WebApiProxy.Tools.TTGenerator.Tests -c Release }
 
