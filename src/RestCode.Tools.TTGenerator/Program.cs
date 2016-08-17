@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WebApiProxy.Tools.TTGenerator
+namespace RestCode.Tools.TTGenerator
 {
     public class Program
     {

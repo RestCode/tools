@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace WebApiProxy.Tools.TTGenerator
+namespace RestCode.Tools.TTGenerator
 {
     internal class ParserGeneratorApplication: CommandLineApplication
     {
@@ -10,7 +10,7 @@ namespace WebApiProxy.Tools.TTGenerator
         {
             this.Name = "ttgen";
             this.Description = "This tool is used to transform text templates for creating code generators.";
-            this.FullName = "WebApiProxy Template Transformation Generator";
+            this.FullName = "RestCode Template Transformation Generator";
 
             this.Command("create", c =>
             {
@@ -40,7 +40,7 @@ namespace WebApiProxy.Tools.TTGenerator
                     var ns = namespaceOption.Value();
                     if (!namespaceOption.HasValue())
                     {
-                        ns = "WebApiProxy.Tools";
+                        ns = "RestCode.Tools";
                     }
 
                     var inputFiles = sources.Split(' ');

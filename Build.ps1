@@ -54,12 +54,12 @@ if(Test-Path .\artifacts) { Remove-Item .\artifacts -Force -Recurse }
 
 exec { & dotnet restore }
 
-exec { & dotnet build .\src\WebApiProxy.Tools.TTGenerator\project.json -c Release }
+exec { & dotnet build .\src\RestCode.Tools.TTGenerator\project.json -c Release }
 
 
 $tag = @{ $true = $env:PRE_RELEASE_TAG; $false = 1 }[$env:PRE_RELEASE_TAG -ne $NULL];
 $revision =  $tag + @{ $true = $env:APPVEYOR_BUILD_NUMBER; $false = 1 }[$env:APPVEYOR_BUILD_NUMBER -ne $NULL];
 
-#exec { & dotnet test .\test\WebApiProxy.Tools.TTGenerator.Tests -c Release }
+#exec { & dotnet test .\test\RestCode.Tools.TTGenerator.Tests -c Release }
 
-exec { & dotnet pack .\src\WebApiProxy.Tools.TTGenerator -c Release -o .\artifacts --version-suffix=$revision }  
+exec { & dotnet pack .\src\RestCode.Tools.TTGenerator -c Release -o .\artifacts --version-suffix=$revision }  
